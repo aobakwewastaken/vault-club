@@ -14,18 +14,18 @@ export function SiteHeader() {
             className="shrink-0"
           />
           <span className="font-display text-xl tracking-wide text-foreground sm:text-2xl">
-            VAULT STRENGTH CLUB
+            VSC<sup className="text-[0.5em] ml-0.5">®</sup>
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
+          <Link href="/start-here" className="transition-colors hover:text-foreground">
+            The System
+          </Link>
           <Link href="/runs" className="transition-colors hover:text-foreground">
             Runs
           </Link>
-          <Link href="/community" className="transition-colors hover:text-foreground">
-            Community
-          </Link>
-          <Link href="/#newsletter" className="transition-colors hover:text-foreground">
-            Newsletter
+          <Link href="/membership" className="transition-colors hover:text-foreground">
+            Membership
           </Link>
         </nav>
       </div>

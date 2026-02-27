@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://instagram.com", icon: Instagram },
+  { label: "Instagram", href: "https://www.instagram.com/vault_strengthclub/", icon: Instagram },
   { label: "Twitter", href: "https://twitter.com", icon: Twitter },
   { label: "YouTube", href: "https://youtube.com", icon: Youtube },
   { label: "Facebook", href: "https://facebook.com", icon: Facebook },
@@ -16,7 +16,7 @@ export function SiteFooter() {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {year} Vault Strength Club · All paces welcome.
+            © {year} VSC<sup className="text-[0.6em]">®</sup> · Built on structure.
           </p>
           <nav className="flex items-center gap-5" aria-label="Social media">
             {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (

@@ -7,7 +7,7 @@ const UPCOMING_RUN = {
   time: "Arrival from 06:00",
   title: "Community Run",
   location: "In collaboration with @thegrindza cafe",
-  distance: "All runners welcome",
+  distance: "5K / 10K options",
   imageSrc: RUN_IMAGES.upcoming,
 };
 
@@ -25,7 +25,7 @@ export function RunSchedule() {
           UPCOMING RUNS
         </h2>
         <p className="mt-3 text-muted-foreground mb-12 max-w-xl">
-          Weekly group runs—all paces welcome. Just show up.
+          Structured weekly sessions. Show up ready.
         </p>
 
         {/* Upcoming: This Saturday */}

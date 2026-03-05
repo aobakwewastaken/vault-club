@@ -3,28 +3,36 @@ import { COMMUNITY_PHOTOS } from "@/lib/asset-paths";
 
 export function CommunityPhotos() {
   return (
-    <section id="community" className="border-t border-border bg-muted/30 py-20 sm:py-28">
-      <div className="container max-w-6xl mx-auto px-4">
-        <h2 className="font-display text-3xl tracking-wide text-foreground sm:text-4xl">
-          COMMUNITY PHOTOS
-        </h2>
-        <p className="mt-3 text-muted-foreground mb-12 max-w-xl">
-          Showing up for something bigger. Every run, every Saturday.
+    <>
+      {/* Hero */}
+      <section className="px-6 pb-8 pt-24 md:px-12 md:pt-32 lg:px-20">
+        <h1 className="font-display text-6xl leading-[0.9] md:text-8xl">
+          COMMUNITY
+        </h1>
+        <p className="mt-6 text-sm uppercase tracking-[0.25em] text-white/50">
+          This was never just about a run.
         </p>
-        <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4">
+      </section>
+
+      {/* Photo Grid */}
+      <section id="community" className="px-6 pb-20 pt-8 md:px-12 lg:px-20">
+        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
           {COMMUNITY_PHOTOS.map((src, i) => (
-            <li key={i} className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
+            <div
+              key={i}
+              className="relative aspect-[4/5] overflow-hidden"
+            >
               <Image
                 src={src}
-                alt={`Community run ${i + 1}`}
+                alt={`Community ${i + 1}`}
                 fill
-                className="object-cover transition-transform hover:scale-105"
+                className="object-cover grayscale transition-all duration-500 hover:grayscale-0 hover:scale-105"
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
               />
-            </li>
+            </div>
           ))}
-        </ul>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }

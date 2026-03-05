@@ -4,12 +4,12 @@ import { SiteFooter } from "@/components/site-footer";
 
 export default function RunsPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
       <main>
         <RunSchedule />
       </main>
-      <SiteFooter />
+      <SiteFooter variant="dark" />
     </div>
   );
 }

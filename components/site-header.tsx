@@ -3,29 +3,27 @@ import Image from "next/image";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-6xl items-center justify-between px-4 mx-auto">
-        <Link href="/" className="flex items-center gap-2.5">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/95 backdrop-blur supports-[backdrop-filter]:bg-black/80">
+      <div className="flex h-16 items-center justify-between px-6 md:px-12">
+        <Link href="/" className="flex items-center">
           <Image
-            src="/vault-DKm1acu3.svg"
-            alt=""
-            width={36}
-            height={36}
-            className="shrink-0"
+            src="/logo/vsc-logo-text-black.png"
+            alt="VSC"
+            width={160}
+            height={90}
+            unoptimized
+            className="h-9 w-auto rounded-lg md:h-10"
           />
-          <span className="font-display text-xl tracking-wide text-foreground sm:text-2xl">
-            VSC<sup className="text-[0.5em] ml-0.5">®</sup>
-          </span>
         </Link>
-        <nav className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
-          <Link href="/start-here" className="transition-colors hover:text-foreground">
-            The System
+        <nav className="flex items-center gap-8 text-xs font-medium uppercase tracking-[0.2em] text-white/60">
+          <Link href="/start-here" className="transition-colors hover:text-white">
+            System
           </Link>
-          <Link href="/runs" className="transition-colors hover:text-foreground">
+          <Link href="/runs" className="transition-colors hover:text-white">
             Runs
           </Link>
-          <Link href="/membership" className="transition-colors hover:text-foreground">
-            Membership
+          <Link href="/membership" className="transition-colors hover:text-white">
+            Join
           </Link>
         </nav>
       </div>

@@ -1,172 +1,131 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import Link from "next/link";
-import {
-  Calendar,
-  Sun,
-  Dumbbell,
-  Heart,
-  Sparkles,
-  ShoppingBag,
-  Users,
-  Handshake,
-} from "lucide-react";
+import Image from "next/image";
+import { HERO_IMAGES } from "@/lib/asset-paths";
 
 const PILLARS = [
   {
     id: "running",
-    title: "Running",
-    icon: Calendar,
-    description:
-      "Running is the entry point. It brings people together consistently in the same place, at the same time, under shared standards. Saturday runs and Long Run Sundays are the spine of the community. They build consistency, resilience, and accountability.",
+    title: "RUNNING",
+    description: "The entry point. Saturday runs and Long Run Sundays are the spine.",
     link: "/runs",
   },
   {
     id: "strength",
-    title: "Strength",
-    icon: Dumbbell,
-    description:
-      "Strength training is core to the system. Structured strength classes and performance sessions exist to support better movement, injury prevention, and long term physical confidence. We train to last.",
+    title: "STRENGTH",
+    description: "Core to the system. We train to last.",
   },
   {
     id: "wellness",
-    title: "Wellness",
-    icon: Heart,
-    description:
-      "Wellness is part of the process. VSC® hosts wellness events, recovery sessions, breath work, education workshops, and community experiences designed to support sustainability, not burnout. Rest, recovery, and routine are treated as seriously as performance.",
+    title: "WELLNESS",
+    description: "Rest, recovery, and routine. Treated as seriously as performance.",
   },
   {
     id: "events",
-    title: "Events",
-    icon: Sparkles,
-    description:
-      "VSC® builds culture through intentional events. From performance driven sessions to curated wellness gatherings, every activation supports the same goal: disciplined movement done together.",
+    title: "EVENTS",
+    description: "Culture through intentional activations.",
   },
   {
     id: "product",
-    title: "Product",
-    icon: ShoppingBag,
-    description:
-      "Product within VSC® is not merchandise. It is equipment for participation. Everything created is designed to support showing up, training, and belonging to the system.",
+    title: "PRODUCT",
+    description: "Equipment for participation. Not merchandise.",
     link: "/product",
   },
   {
     id: "membership",
-    title: "Membership",
-    icon: Users,
-    description:
-      "Join the structure. Access to programming, community sessions, and the full VSC® system.",
+    title: "MEMBERSHIP",
+    description: "Join the structure.",
     link: "/membership",
-  },
-  {
-    id: "partners",
-    title: "Partners",
-    icon: Handshake,
-    description:
-      "We collaborate with brands and businesses aligned with our values. Performance. Structure. Discipline.",
-    link: "/partners",
   },
 ];
 
 export default function StartHerePage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
-      <main className="py-16 sm:py-24">
-        <div className="container max-w-3xl mx-auto px-4">
-          {/* About Section */}
-          <section className="mb-16">
-            <h1 className="font-display text-4xl tracking-wide text-foreground sm:text-5xl">
-              ABOUT VSC<sup className="text-[0.5em] ml-0.5">®</sup>
-            </h1>
-            <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                VSC® is a performance led movement built on structure, discipline, and shared effort.
-              </p>
-              <p>
-                Running is the entry point. It brings people together consistently in the same place, at the same time, under shared standards. Saturday runs and Long Run Sundays are the spine of the community. They build consistency, resilience, and accountability.
-              </p>
-              <p>
-                But VSC® does not stop at running.
-              </p>
-              <p>
-                Strength training is core to the system. Structured strength classes and performance sessions exist to support better movement, injury prevention, and long term physical confidence. We train to last.
-              </p>
-              <p>
-                Wellness is part of the process. VSC® hosts wellness events, recovery sessions, breath work, education workshops, and community experiences designed to support sustainability, not burnout. Rest, recovery, and routine are treated as seriously as performance.
-              </p>
-              <p>
-                VSC® also builds culture through intentional events. From performance driven sessions to curated wellness gatherings, every activation supports the same goal: disciplined movement done together.
-              </p>
-              <p>
-                Product within VSC® is not merchandise. It is equipment for participation. Everything created is designed to support showing up, training, and belonging to the system.
-              </p>
-            </div>
-          </section>
 
-          {/* Standards */}
-          <section className="mb-16 rounded-xl border border-border bg-card p-6 sm:p-8">
-            <h2 className="font-display text-2xl tracking-wide text-foreground sm:text-3xl">
+      {/* Hero */}
+      <section className="relative flex min-h-[60vh] items-end overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src={HERO_IMAGES[2]}
+            alt="VSC community"
+            fill
+            priority
+            className="object-cover grayscale"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
+        </div>
+        <div className="relative z-10 px-6 pb-16 md:px-12 lg:px-20">
+          <h1 className="font-display text-6xl leading-[0.9] md:text-8xl lg:text-9xl">
+            THE
+            <br />
+            SYSTEM
+          </h1>
+        </div>
+      </section>
+
+      <main>
+        {/* Manifesto */}
+        <section className="border-t border-white/10 px-6 py-20 md:px-12 md:py-28 lg:px-20">
+          <div className="max-w-3xl">
+            <p className="text-xl leading-relaxed text-white/80 md:text-2xl">
+              VSC® is a performance led movement built on structure, discipline,
+              and shared effort. Running is the entry point. Strength is the
+              foundation.
+            </p>
+            <p className="mt-8 text-xl leading-relaxed text-white/80 md:text-2xl">
+              We don&apos;t do hype. We do repetition.
+            </p>
+          </div>
+        </section>
+
+        {/* Standards */}
+        <section className="border-t border-white/10 bg-white px-6 py-20 text-black md:px-12 md:py-28 lg:px-20">
+          <div className="max-w-3xl">
+            <span className="text-xs font-medium uppercase tracking-[0.3em] text-black/50">
+              Non-negotiable
+            </span>
+            <h2 className="mt-4 font-display text-5xl leading-[0.9] md:text-6xl">
               STANDARDS
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              Everyone is welcome. Standards are non negotiable. Respect the space. Respect the timing. Respect the effort of others.
-            </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              VSC® is not built on hype. It is built on repetition.
-            </p>
-            <p className="mt-6 font-medium text-foreground">
-              We build strong humans through disciplined movement, together.
-            </p>
-            <p className="mt-2 font-display text-lg tracking-wide text-foreground">
-              Strength in numbers.
-            </p>
-          </section>
-
-          {/* The System */}
-          <section>
-            <h2 className="font-display text-2xl tracking-wide text-foreground sm:text-3xl">
-              THE SYSTEM
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              How we operate. What we offer. How to participate.
-            </p>
-
-            <div className="mt-8 space-y-4">
-              {PILLARS.map(({ id, title, icon: Icon, description, link }) => (
-                <article
-                  key={id}
-                  id={id}
-                  className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-foreground/20"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-foreground text-background">
-                      <Icon className="size-4" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground">
-                        {title}
-                      </h3>
-                      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                        {description}
-                      </p>
-                      {link && (
-                        <Link
-                          href={link}
-                          className="mt-3 inline-block text-sm font-medium text-foreground underline underline-offset-4 transition-colors hover:text-muted-foreground"
-                        >
-                          Learn more →
-                        </Link>
-                      )}
-                    </div>
-                  </div>
-                </article>
-              ))}
+            <div className="mt-8 space-y-4 text-lg text-black/70">
+              <p>Everyone is welcome. Standards are non-negotiable.</p>
+              <p>Respect the space. Respect the timing. Respect the effort.</p>
             </div>
-          </section>
-        </div>
+            <p className="mt-12 font-display text-2xl md:text-3xl">
+              STRENGTH IN NUMBERS.
+            </p>
+          </div>
+        </section>
+
+        {/* The System Grid */}
+        <section className="border-t border-white/10 px-6 py-20 md:px-12 md:py-28 lg:px-20">
+          <h2 className="font-display text-5xl md:text-6xl">THE PILLARS</h2>
+          <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-3">
+            {PILLARS.map(({ id, title, description, link }) => (
+              <article
+                key={id}
+                className="group bg-black p-8 transition-colors hover:bg-white/5"
+              >
+                <h3 className="font-display text-2xl">{title}</h3>
+                <p className="mt-3 text-sm text-white/60">{description}</p>
+                {link && (
+                  <Link
+                    href={link}
+                    className="mt-6 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-white/40 transition-colors hover:text-white"
+                  >
+                    Explore →
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
-      <SiteFooter />
+
+      <SiteFooter variant="dark" />
     </div>
   );
 }

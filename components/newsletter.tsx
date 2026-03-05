@@ -19,14 +19,14 @@ export function Newsletter() {
   }
 
   return (
-    <section id="newsletter" className="border-t border-border bg-background py-20 sm:py-28">
+    <section id="newsletter" className="border-t border-border bg-black py-16 sm:py-20">
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="mx-auto max-w-xl text-center">
-          <h2 className="font-display text-3xl tracking-wide text-foreground sm:text-4xl">
-            STAY IN THE LOOP
+        <div className="mx-auto max-w-xl text-center text-white">
+          <h2 className="font-display text-3xl tracking-wide sm:text-4xl">
+            GET THE NEXT DROP
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Run reminders, club news, and good vibes—straight to your inbox.
+          <p className="mt-3 text-sm uppercase tracking-[0.22em] text-white/60">
+            RUN REPORTS. ROUTES. RACE CALLS.
           </p>
           <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row sm:gap-2">
             <Input
@@ -35,15 +35,23 @@ export function Newsletter() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === "loading"}
-              className="flex-1 bg-background"
+              className="flex-1 bg-black border-white/30 text-white placeholder:text-white/40"
             />
-            <Button type="submit" disabled={status === "loading"} className="shrink-0">
-              {status === "loading" ? "Subscribing…" : status === "success" ? "Subscribed" : "Subscribe"}
+            <Button
+              type="submit"
+              disabled={status === "loading"}
+              className="shrink-0 rounded-full bg-white text-black hover:bg-white/90"
+            >
+              {status === "loading"
+                ? "Joining…"
+                : status === "success"
+                ? "You’re in"
+                : "Join the list"}
             </Button>
           </form>
           {status === "success" && (
-            <p className="mt-2 text-sm text-muted-foreground">
-              Thanks for subscribing. We&apos;ll be in touch.
+            <p className="mt-2 text-sm text-white/70">
+              See you in the next send. No spam, just miles.
             </p>
           )}
         </div>

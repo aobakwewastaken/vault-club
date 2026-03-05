@@ -1,22 +1,22 @@
 import { Mail } from "lucide-react";
 
 const MOCK_ISSUE = {
-  title: "No risk, no story 🔐🖤",
-  date: "This week",
+  title: "NO RISK. NO STORY.",
+  date: "VAULT WEEKLY",
   preview:
-    "Every Saturday, community moving as one. It's about commitment and consistency. Here's what's coming up: This Saturday we're teaming up with @thegrindza — arrival from 06:00, all runners welcome. Sunday Long Runs are here; as we grow, we raise the standard. See you on the road.",
-  cta: "Subscribe below to get the next one in your inbox.",
+    "Every Saturday, bodies on the line. No spectators. No passengers. Just people raising their own bar.",
+  cta: "Demo issue only. Drop your email below to get the real thing.",
 };
 
 export function MockNewsletter() {
   return (
-    <section className="border-t border-border bg-background py-16 sm:py-20">
+    <section className="border-t border-border bg-background py-14 sm:py-18">
       <div className="container max-w-6xl mx-auto px-4">
         <h2 className="font-display text-3xl tracking-wide text-foreground sm:text-4xl">
-          LATEST FROM THE VAULT
+          THE VAULT REPORT
         </h2>
         <p className="mt-3 text-muted-foreground mb-8 max-w-xl">
-          A peek at what we send to the list. Demo only—subscribe to get the real thing.
+          A snapshot of what hits the list. Not for lurkers.
         </p>
         <article className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
           <div className="flex items-start gap-3">

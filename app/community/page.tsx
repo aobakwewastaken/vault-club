@@ -4,12 +4,12 @@ import { SiteFooter } from "@/components/site-footer";
 
 export default function CommunityPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
       <main>
         <CommunityPhotos />
       </main>
-      <SiteFooter />
+      <SiteFooter variant="dark" />
     </div>
   );
 }

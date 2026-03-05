@@ -6,10 +6,10 @@ export function CommunityCta() {
     <section className="border-t border-border bg-neutral-800 py-20 text-white sm:py-28">
       <div className="container max-w-6xl mx-auto px-4 text-center">
         <h2 className="font-display text-3xl tracking-wide sm:text-4xl md:text-5xl">
-          GOOD VIBES ONLY
+          THIS IS NOT A JOG
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-white/85">
-          No sign-up forms, no membership fees. Just turn up, run, and see who you meet.
+        <p className="mt-4 max-w-2xl mx-auto text-base text-white/80">
+          We don&apos;t do casual. We do commitment, consistency, and crews that pull you forward.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Button

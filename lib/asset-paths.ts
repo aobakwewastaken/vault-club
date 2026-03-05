@@ -4,6 +4,7 @@
 
 const run = (name: string) => `/runs/${encodeURIComponent(name)}`;
 const community = (name: string) => `/community/${encodeURIComponent(name)}`;
+const hero = (name: string) => `/hero/${encodeURIComponent(name)}`;
 
 export const RUN_IMAGES = {
   /** Upcoming Saturday run (The Grindza collab) */
@@ -38,4 +39,13 @@ export const COMMUNITY_PHOTOS = [
   community(`${COMMUNITY_BASE} (4).jpg`),
   community(`${COMMUNITY_BASE} (5).jpg`),
   community(`${COMMUNITY_BASE} (6).jpg`),
+] as const;
+
+export const HERO_IMAGES = [
+  hero("DSC02458.jpg"),
+  hero("DSC02597.jpg"),
+  hero("DSC02665.jpg"),
+  hero("18020023.jpg"),
+  hero("18020061.jpg"),
+  hero("18028972.jpg"),
 ] as const;

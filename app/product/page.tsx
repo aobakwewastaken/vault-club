@@ -1,65 +1,64 @@
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { Dumbbell, Footprints, Heart, Package } from "lucide-react";
+import Link from "next/link";
 
 const CATEGORIES = [
-  {
-    title: "Run",
-    icon: Footprints,
-    description: "Gear for Saturday runs and long run Sundays.",
-  },
-  {
-    title: "Strength",
-    icon: Dumbbell,
-    description: "Equipment and apparel for strength sessions.",
-  },
-  {
-    title: "Recovery",
-    icon: Heart,
-    description: "Tools to support rest and regeneration.",
-  },
-  {
-    title: "Essentials",
-    icon: Package,
-    description: "Core items for showing up ready.",
-  },
+  { title: "RUN", description: "Gear for Saturday runs and long run Sundays." },
+  { title: "STRENGTH", description: "Equipment and apparel for strength sessions." },
+  { title: "RECOVERY", description: "Tools to support rest and regeneration." },
+  { title: "ESSENTIALS", description: "Core items for showing up ready." },
 ];
 
 export default function ProductPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-white">
       <SiteHeader />
-      <main className="py-16 sm:py-24">
-        <div className="container max-w-4xl mx-auto px-4">
-          <h1 className="font-display text-4xl tracking-wide text-foreground sm:text-5xl">
+      <main>
+        {/* Hero */}
+        <section className="px-6 pb-8 pt-24 md:px-12 md:pt-32 lg:px-20">
+          <h1 className="font-display text-6xl leading-[0.9] md:text-8xl">
             PRODUCT
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-            Product within VSC® is not merchandise. It is equipment for participation. Everything created is designed to support showing up, training, and belonging to the system.
+          <p className="mt-6 max-w-lg text-lg text-white/60">
+            Not merchandise. Equipment for participation.
           </p>
+        </section>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {CATEGORIES.map(({ title, icon: Icon, description }) => (
+        {/* Categories Grid */}
+        <section className="px-6 py-12 md:px-12 lg:px-20">
+          <div className="grid gap-px bg-white/10 md:grid-cols-2">
+            {CATEGORIES.map(({ title, description }) => (
               <div
                 key={title}
-                className="rounded-xl border border-border bg-card p-6 transition-all hover:border-foreground/20"
+                className="bg-black p-8 transition-colors hover:bg-white/5 md:p-12"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground text-background">
-                  <Icon className="size-5" />
-                </div>
-                <h2 className="mt-4 text-lg font-semibold text-foreground">
-                  {title}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {description}
-                </p>
-                <p className="mt-4 text-xs text-muted-foreground/60">
+                <h2 className="font-display text-3xl md:text-4xl">{title}</h2>
+                <p className="mt-4 text-sm text-white/50">{description}</p>
+                <span className="mt-6 inline-block text-xs uppercase tracking-[0.2em] text-white/30">
                   Coming soon
-                </p>
+                </span>
               </div>
             ))}
           </div>
-        </div>
+        </section>
+
+        {/* CTA */}
+        <section className="border-t border-white/10 bg-white px-6 py-20 text-black md:px-12 lg:px-20">
+          <div className="max-w-2xl">
+            <h2 className="font-display text-4xl md:text-5xl">
+              GET NOTIFIED
+            </h2>
+            <p className="mt-4 text-black/60">
+              Be first to know when product drops.
+            </p>
+            <Link
+              href="/#newsletter"
+              className="mt-8 inline-block border-2 border-black bg-black px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-all hover:bg-transparent hover:text-black"
+            >
+              Join Newsletter
+            </Link>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
